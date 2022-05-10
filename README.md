@@ -2,7 +2,7 @@
 
 This sample application is a Laravel application that uses Archetype SDK. You can clone this repo for quick start.
 
-In this guide we're going to learn the installtion and configuration of archetype SDK, and also share some examples on how to use Archetype SDK on your Laravel application.
+In this guide we're going to learn the installation and configuration of archetype SDK, and also share some examples on how to use Archetype SDK on your Laravel application.
 
 If your PHP application is not Laravel based, [follow the insturctions here](https://github.com/ArchetypeAPI/php-sdk)
 <br/>
