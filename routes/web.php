@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Archetype\Archetype;
+// use Archetype\Archetype;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 
@@ -23,7 +23,7 @@ Route::get('/register-user', function () {
     return response($user);
 });
 Route::get('/track', function (Request $request) {
-    Archetype::track('CUSTOM-ID', $request);
+    Archetype::log('apikey', $request);
     return response('Hello World!!');
 });
 
@@ -33,21 +33,14 @@ Route::get('/products', function () {
     return response($products);
 });
 
-Route::get('/', function(Request $request) {
-    Archetype::track('CUSTOM-UID', $request);
 
-    return response('Hello World!!');
-});
 
 Route::get('/user', function () {
     $user = Archetype::getUser('CUSTOM-ID');
-    // dd($user);
-    // return $user;
     return response()->json($user);
 });
   
 Route::get('/create-checkout-session', function () {
-
     $checkoutUrl = Archetype::createCheckoutSession('CUSTOM-ID', 'PRODUCT-ID');
     return response()->json(['url' => $checkoutUrl]);
 });
